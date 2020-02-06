@@ -1,24 +1,30 @@
-local animfile = require "animFile"
-local animator = require 'animator'
-local animTable
+class = require 'lib/middleclass'
+Stateful = require 'lib/stateful'
 
-function love.update(dt)
-
-end
-
+local 'game'
 
 function love.load(arg)
-	love.graphics.setDefaultFilter( 'nearest', 'nearest' )
-	empt = love.graphics.newImage('assets/TestMage.png')
-	--animTable = {one = love.graphics.newImage( 'assets/blocksEmp.png' ), two = love.graphics.newImage( 'assets/Grassland_01.png' )}
 
+	game = Game:new()
 
-	--anim = animator.newAnimation( { animTable[1], animTable[2]}, { 1, 1})
-	--anim:setLooping()
-	rotation = 0
+	--love.graphics.setDefaultFilter( 'nearest', 'nearest' )
+	--empt = love.graphics.newImage('assets/TestMage.png')
+end
+
+function love.update(dt)
+	game:update(dt)
 end
 
 function love.draw(dt)
+	game:draw()
 	--love.graphics.draw(animTable[1], 1, 1,0, 1, 1)
-	love.graphics.draw(empt, 1, 1, 0, .25, .25)
+	--love.graphics.draw(empt, 1, 1, 0, .25, .25)
+end
+
+function love.keypressed(key, code)
+	game:keypressed(key, code)
+end
+
+function love.mousepressed(x, y, button, istouch)
+	game:mousepressed(x, y, button, istouch)
 end
