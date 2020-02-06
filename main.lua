@@ -1,7 +1,9 @@
 class = require 'lib/middleclass'
 Stateful = require 'lib/stateful'
 
-local 'game'
+require 'game'
+
+local game
 
 function love.load(arg)
 

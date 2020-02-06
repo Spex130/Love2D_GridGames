@@ -6,7 +6,7 @@ require 'states/pause'
 require 'states/game_over'
 
 function Game:initialize()
-	self:gotoState('Menu')
+	self:gotoState('Pause')
 end
 
 function Game:exit()
