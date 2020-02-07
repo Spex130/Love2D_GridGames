@@ -5,6 +5,9 @@ require 'game'
 
 local game
 
+--Fonts
+pixelFont = love.graphics.newFont("assets/PressStart2P-Regular.ttf", 15)
+
 function love.load(arg)
 
 	game = Game:new()

@@ -1,6 +1,8 @@
 local Pause = Game:addState('Pause')
+local menuengine = require "lib/menuengine"
 
 function Pause:enteredState()
+love.graphics.setFont(pixelFont, 20)
 end
 
 function Pause:exitedState()
@@ -8,6 +10,7 @@ end
 
 function Pause:draw()
 	--love.graphics.setBackgroundColor(BG_COLOR)
+	
 
 	love.graphics.setColor(0, 0, 51, 100)
 	love.graphics.rectangle('fill', 350, 200, 200, 50)
