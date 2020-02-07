@@ -1,19 +1,16 @@
-class = require 'lib/middleclass'
-Stateful = require 'lib/stateful'
+class = require 'lib/middleclass'	--OOP Classes
+Stateful = require 'lib/stateful'	--State Machines
+push = require "lib/push"			--Window Resizing
 
 require 'game'
-
 local game
+
 
 --Fonts
 pixelFont = love.graphics.newFont("assets/PressStart2P-Regular.ttf", 15)
 
 function love.load(arg)
-
 	game = Game:new()
-
-	--love.graphics.setDefaultFilter( 'nearest', 'nearest' )
-	--empt = love.graphics.newImage('assets/TestMage.png')
 end
 
 function love.update(dt)

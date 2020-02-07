@@ -9,6 +9,7 @@ function Pause:exitedState()
 end
 
 function Pause:draw()
+push:apply("start")
 	--love.graphics.setBackgroundColor(BG_COLOR)
 	
 
@@ -17,6 +18,7 @@ function Pause:draw()
 
 	love.graphics.setColor(255, 223, 0)
 	love.graphics.printf('GAME PAUSED', 350, 220, 200, 'center')
+push:apply("end")
 end
 
 function Pause:keypressed(key, code)
