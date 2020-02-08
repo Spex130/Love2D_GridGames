@@ -5,19 +5,20 @@ require 'states/menu'
 require 'states/pause'
 require 'states/game_over'
 
-windowScaleFactor = .8
+windowScaleFactor = .5
 
 function Game:initialize()
 
-	love.graphics.setDefaultFilter("nearest", "nearest") --disable blurry scaling
-	local gameWidth, gameHeight = 600, 600
-	local windowWidth, windowHeight = love.window.getDesktopDimensions()
-	windowWidth, windowHeight = windowWidth*windowScaleFactor, windowHeight*windowScaleFactor
+	gameWidth, gameHeight = 1080, 720
 
-  push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, {
+	local windowWidth, windowHeight = love.window.getDesktopDimensions()
+	windowWidth, windowHeight = windowWidth*.5, windowHeight*.5
+
+	push:setupScreen(gameWidth, gameHeight, windowWidth, windowHeight, {
     fullscreen = false,
     resizable = true,
-    pixelperfect = true
+    highdpi = true,
+    canvas = true
   })
 	self:gotoState('Pause')
 end

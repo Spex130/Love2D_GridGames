@@ -18,9 +18,11 @@ function love.update(dt)
 end
 
 function love.draw(dt)
+push:apply("start")
+love.graphics.setScissor(0, 0, push:getWidth(), push:getHeight()-16)
 	game:draw()
-	--love.graphics.draw(animTable[1], 1, 1,0, 1, 1)
-	--love.graphics.draw(empt, 1, 1, 0, .25, .25)
+love.graphics.setScissor()
+push:apply("end")
 end
 
 function love.keypressed(key, code)
@@ -29,4 +31,8 @@ end
 
 function love.mousepressed(x, y, button, istouch)
 	game:mousepressed(x, y, button, istouch)
+end
+
+function love.resize(w, h)
+  push:resize(w, h)
 end

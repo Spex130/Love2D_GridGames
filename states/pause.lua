@@ -9,16 +9,17 @@ function Pause:exitedState()
 end
 
 function Pause:draw()
-push:apply("start")
-	--love.graphics.setBackgroundColor(BG_COLOR)
+
+
+
+	--DEBUG PAUSE DRAWS
+	image = love.graphics.newImage( "assets/gamebackground.png" )
+	love.graphics.draw(image, (gameWidth-image:getWidth())*.5, (gameHeight-image:getHeight())*.5, 0, 2, 1)
+
+	--love.graphics.setColor(255, 223, 0)
+	--love.graphics.printf('GAME PAUSED', 350, 220, 200, 'center')
 	
 
-	love.graphics.setColor(0, 0, 51, 100)
-	love.graphics.rectangle('fill', 350, 200, 200, 50)
-
-	love.graphics.setColor(255, 223, 0)
-	love.graphics.printf('GAME PAUSED', 350, 220, 200, 'center')
-push:apply("end")
 end
 
 function Pause:keypressed(key, code)
